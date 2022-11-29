@@ -1,0 +1,20 @@
+spring:
+  application:
+    name: demo-spring-cloud-turbine
+
+server:
+  port: 8001
+
+management:
+  port: 8002
+
+eureka:
+  client:
+    service-url:
+      defaultZone: http://localhost:8080/eureka
+
+## 监控汇总配置，这里配置2个应用逗号隔开
+turbine:
+  app-config: demo-spring-cloud-feign,demo-spring-cloud-ribbon
+  cluster-name-expression: new String("default")
+  combine-host-port: true
